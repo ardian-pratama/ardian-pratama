@@ -1,0 +1,65 @@
+form {
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+}
+form label {
+ position: relative;
+ margin: 20px 0;
+}
+form label div {
+ display: grid;
+ grid-template-columns: 35px auto;
+ border-radius: 10px;
+ overflow: hidden;
+}
+form label div input, form label div textarea {
+ width: 100%;
+ padding: 10px 15px;
+ border: none;
+}
+form label div input:focus, form label div textarea:focus {
+ outline: none;
+}
+form label div textarea {
+ resize: none;
+}
+form label div svg {
+ width: 20px;
+ height: 100%;
+ margin: auto;
+}
+form label div p {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 200px;
+ transform: translate(50px, 8px);
+ transition: transform 0.3s ease-in-out;
+}
+form label div span {
+ position: absolute;
+ top: 0;
+ left: 0;
+ font-size: 0.8rem;
+ transform: translate(40px, 45px);
+ opacity: 0;
+}
+.button-form {
+ all: unset;
+ display: flex;
+ gap: 10px;
+ width: max-content;
+ padding: 5px 10px;
+ margin: 15px auto;
+ border-radius: 10px;
+}
+
+/* floating */
+input:focus + p, input:valid + p, textarea:focus + p, textarea:valid + p {
+ transform: translate(40px, -25px) scale(0.8);
+ background: none;
+}
+input:focus:invalid ~ span, textarea:focus:invalid ~ span {
+ opacity: 1;
+}

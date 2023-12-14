@@ -1,0 +1,178 @@
+:root {
+ --dark-1: #100f10;
+ --dark-2: #1b1b1b;
+ --dark-3: #242424;
+ --white-1: #f8f8f8f6;
+ --white-2: #f8f8f8ab;
+ --white-3: #f8f8f88e;
+ --main-color-1: #8739f9;
+ --main-color-2: #c651cd;
+ --main-color-3: #14b8a6;
+ --main-color-4: #363636;
+}
+body {
+ background-color: var(--dark-3);
+}
+.header {
+ background-color: var(--dark-1);
+ color: var(--white-1);
+}
+.navbar-button span {
+ background-color: var(--white-1);
+}
+.navbar-menu {
+ background-color: var(--dark-1);
+}
+.navbar-menu ul li a span svg {
+ fill: var(--white-1);
+}
+.navbar-scroll {
+ filter: drop-shadow(4px 4px 8px var(--main-color-3));
+}
+.svg {
+ fill: var(--dark-2);
+ filter: drop-shadow(4px 4px 8px var(--main-color-3));
+}
+.judul-section {
+ color: var(--main-color-3);
+}
+.pembuka h3 {
+ color: var(--main-color-3);
+}
+.pembuka h1 {
+ color: var(--white-1);
+}
+.pembuka h4 {
+ color: var(--white-2);
+}
+.pembuka p {
+ color: var(--white-3);
+}
+.pembuka p span {
+ color: var(--white-1);
+}
+.pembuka a {
+ color: var(--white-1);
+ background-color: var(--main-color-3);
+}
+.informasi h3 {
+ color: var(--main-color-3);
+}
+.informasi p {
+ color: var(--white-3);
+}
+.countdown-item span:nth-child(odd) {
+ color: var(--white-1);
+ background-color: var(--main-color-3);
+}
+.countdown-item span:nth-child(even) {
+ color: var(--white-1);
+}
+.countdown-item p {
+ color: var(--white-1);
+}
+.image-profil svg {
+ fill: var(--main-color-3);
+}
+.informasi-profil {
+ color: var(--white-1);
+}
+.informasi-profil .button-tampil {
+ background-color: var(--main-color-3);
+}
+.isi-profil {
+ color: var(--white-2);
+ background-color: var(--dark-3);
+}
+.informasi-pencapaian {
+ color: var(--white-1);
+}
+.informasi-pencapaian .button-tampil {
+ background-color: var(--main-color-3);
+}
+.isi-pencapaian {
+ color: var(--white-2);
+ background-color: var(--dark-3);
+}
+.sosial-media {
+ color: var(--white-1);
+ background-color: var(--dark-3);
+}
+.projek {
+ background-color: var(--main-color-4);
+}
+.hubungi-saya .button-form {
+ color: var(--white-1);
+ background-color: var(--main-color-3);
+}
+footer {
+ background-color: var(--dark-1);
+}
+.bagian {
+ color: var(--white-2);
+}
+.bagian h1 {
+ color: var(--white-1);
+}
+.bagian h2 {
+ color: var(--white-1);
+}
+.footer-end p {
+ color: var(--white-2);
+}
+.footer-icon svg {
+ fill: var(--white-2);
+}
+.alert {
+ color: var(--white-1);
+}
+
+/* class universal */
+.box {
+ background-color: var(--dark-2);
+}
+.cursor:after {
+ color: var(--main-color-3);
+}
+.button-tampil p {
+ color: var(--white-1);
+}
+.button-tampil svg {
+ fill: var(--white-1);
+}
+.card {
+ background-color: var(--dark-2);
+}
+.teks-card h3 {
+ color: var(--white-1);
+}
+.teks-card p {
+ color: var(--white-3);
+}
+.teks-card .baca-selengkapnya {
+ color: var(--white-1);
+ background-color: var(--main-color-3);
+}
+.card .kunjungi {
+ background-color: var(--main-color-3);
+}
+form label {
+ color: var(--white-1);
+}
+form label div {
+ outline: 2px solid var(--dark-3);
+ background-color: var(--dark-3);
+}
+form label div svg {
+ fill: var(--white-1);
+}
+form label div input, form label div textarea {
+ color: var(--white-2);
+ background-color: var(--dark-2);
+}
+form label div p {
+ background-color: var(--dark-2);
+}
+input:focus:invalid, textarea:focus:invalid {
+ color: var(--main-color-3);
+}
