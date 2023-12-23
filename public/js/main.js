@@ -20,7 +20,6 @@ window.addEventListener("load", () => {
 
 const userKeys = Object.keys(localStorage);
 // memberikan id kepada user
-console.log(userKeys);
 if (!userKeys.includes("id") && window.performance.navigation.type === 1) {
  const idUser = function () {
   let id = "";

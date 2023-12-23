@@ -86,12 +86,12 @@ export function button() {
  new TampilBahasa("html");
  new TampilBahasa("css");
  new TampilBahasa("javascript");
- 
+
  // function untuk baca selengkapnya
  function Baca(namaKelas) {
   const button = document.querySelector(`.button-${namaKelas}`);
   const teks = document.querySelector(`.teks-card .${namaKelas}`);
-  
+
   button.addEventListener("click", () => {
    console.log("click");
    const kelas = teks.classList.contains("line-clamp");
@@ -103,8 +103,9 @@ export function button() {
    teks.classList.toggle("line-clamp");
   });
  }
- 
+
  // Jalankan constructor function
  new Baca("portfolio-website");
+ new Baca("spesial-website");
  new Baca("coming-soon");
 }

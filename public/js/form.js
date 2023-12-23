@@ -49,7 +49,7 @@ export function form() {
      "%0A" +
      "%20%20" +
      encodeURIComponent(`*${pesanInput}*`);
-     
+
     document.querySelector(".progres").classList.remove("display-none");
     setTimeout(() => {
      document.querySelector(".progres").classList.add("display-none");

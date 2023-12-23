@@ -594,9 +594,9 @@ textarea:focus:invalid ~ span {
  opacity: 1;
 }
 
-
 /* footer */
 footer {
+ padding-top: 50px;
  font-size: 0.8rem;
 }
 .footer .footer-item {
@@ -611,7 +611,9 @@ footer {
  font-size: 2rem;
  font-weight: 900;
 }
-.footer-item p, .footer-item span, .footer-item a {
+.footer-item p,
+.footer-item span,
+.footer-item a {
  all: unset;
  margin-left: 0.5rem;
  padding: 0.25rem 0;
@@ -634,7 +636,6 @@ footer {
  margin-top: 10px;
  text-align: center;
 }
-
 
 /* progres */
 .progres {
