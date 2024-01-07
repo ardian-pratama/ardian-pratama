@@ -106,6 +106,5 @@ export function button() {
 
  // Jalankan constructor function
  new Baca("portfolio-website");
- new Baca("spesial-website");
  new Baca("coming-soon");
 }
