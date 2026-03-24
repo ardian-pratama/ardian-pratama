@@ -32,7 +32,7 @@ export const Route = createRootRoute({
       },
       {
         property: 'og:url',
-        content: 'https://domainkamu.com',
+        content: 'https://ardian-pratama.vercel.app',
       },
       {
         property: 'og:site_name',
@@ -73,7 +73,7 @@ export const Route = createRootRoute({
       },
       {
         name: 'twitter:url',
-        content: 'https://domainkamu.com',
+        content: 'https://ardian-pratama.vercel.app',
       },
     ],
     links: [
