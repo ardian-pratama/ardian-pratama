@@ -40,7 +40,7 @@ export const Route = createRootRoute({
       },
       {
         property: 'og:image',
-        content: '/images/ardian-pratama-og.png',
+        content: 'https://ardian-pratama.vercel.app/images/ardian-pratama-og.png',
       },
       {
         property: 'og:image:width',
@@ -69,7 +69,7 @@ export const Route = createRootRoute({
       },
       {
         name: 'twitter:image',
-        content: '/images/ardian-pratama-og.png',
+        content: 'https://ardian-pratama.vercel.app/images/ardian-pratama-og.png',
       },
       {
         name: 'twitter:url',
