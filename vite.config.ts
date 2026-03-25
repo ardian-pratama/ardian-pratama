@@ -16,7 +16,12 @@ const config = defineConfig({
     tsconfigPaths({ projects: ['./tsconfig.json'] }),
     tailwindcss(),
     svgr(),
-    tanstackStart(),
+    tanstackStart({
+      sitemap: {
+        enabled: true,
+        host: 'https://ardian-pratama.vercel.app',
+      },
+    }),
     viteReact({
       babel: {
         plugins: ['babel-plugin-react-compiler'],

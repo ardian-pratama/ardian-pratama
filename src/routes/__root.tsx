@@ -75,6 +75,10 @@ export const Route = createRootRoute({
         name: 'twitter:url',
         content: 'https://ardian-pratama.vercel.app',
       },
+      {
+        name: 'google-site-verification',
+        content: 'YWn6JzpAG8yxgxmtLJGJQD9LkQfGh882gdmsnfxZqss'
+      }
     ],
     links: [
       {

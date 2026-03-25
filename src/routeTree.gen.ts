@@ -9,6 +9,8 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as mainRouteRouteImport } from './routes/(main)/route'
 import { Route as authRouteRouteImport } from './routes/(auth)/route'
 import { Route as mainIndexRouteImport } from './routes/(main)/index'
@@ -18,7 +20,18 @@ import { Route as mainAchievementsIndexRouteImport } from './routes/(main)/achie
 import { Route as mainAboutIndexRouteImport } from './routes/(main)/about/index'
 import { Route as authSignUpIndexRouteImport } from './routes/(auth)/sign-up/index'
 import { Route as authSignInIndexRouteImport } from './routes/(auth)/sign-in/index'
+import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const mainRouteRoute = mainRouteRouteImport.update({
   id: '/(main)',
   getParentRoute: () => rootRouteImport,
@@ -62,9 +75,17 @@ const authSignInIndexRoute = authSignInIndexRouteImport.update({
   path: '/sign-in/',
   getParentRoute: () => authRouteRoute,
 } as any)
+const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
+  id: '/api/auth/$',
+  path: '/api/auth/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/': typeof mainIndexRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
   '/sign-in/': typeof authSignInIndexRoute
   '/sign-up/': typeof authSignUpIndexRoute
   '/about/': typeof mainAboutIndexRoute
@@ -73,7 +94,10 @@ export interface FileRoutesByFullPath {
   '/creations/': typeof mainCreationsIndexRoute
 }
 export interface FileRoutesByTo {
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/': typeof mainIndexRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
   '/sign-in': typeof authSignInIndexRoute
   '/sign-up': typeof authSignUpIndexRoute
   '/about': typeof mainAboutIndexRoute
@@ -85,7 +109,10 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/(auth)': typeof authRouteRouteWithChildren
   '/(main)': typeof mainRouteRouteWithChildren
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/(main)/': typeof mainIndexRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
   '/(auth)/sign-in/': typeof authSignInIndexRoute
   '/(auth)/sign-up/': typeof authSignUpIndexRoute
   '/(main)/about/': typeof mainAboutIndexRoute
@@ -96,7 +123,10 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/'
+    | '/api/auth/$'
     | '/sign-in/'
     | '/sign-up/'
     | '/about/'
@@ -105,7 +135,10 @@ export interface FileRouteTypes {
     | '/creations/'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/'
+    | '/api/auth/$'
     | '/sign-in'
     | '/sign-up'
     | '/about'
@@ -116,7 +149,10 @@ export interface FileRouteTypes {
     | '__root__'
     | '/(auth)'
     | '/(main)'
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/(main)/'
+    | '/api/auth/$'
     | '/(auth)/sign-in/'
     | '/(auth)/sign-up/'
     | '/(main)/about/'
@@ -128,10 +164,27 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   authRouteRoute: typeof authRouteRouteWithChildren
   mainRouteRoute: typeof mainRouteRouteWithChildren
+  RobotsDottxtRoute: typeof RobotsDottxtRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ApiAuthSplatRoute: typeof ApiAuthSplatRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/(main)': {
       id: '/(main)'
       path: ''
@@ -195,6 +248,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof authSignInIndexRouteImport
       parentRoute: typeof authRouteRoute
     }
+    '/api/auth/$': {
+      id: '/api/auth/$'
+      path: '/api/auth/$'
+      fullPath: '/api/auth/$'
+      preLoaderRoute: typeof ApiAuthSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -235,6 +295,9 @@ const mainRouteRouteWithChildren = mainRouteRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   authRouteRoute: authRouteRouteWithChildren,
   mainRouteRoute: mainRouteRouteWithChildren,
+  RobotsDottxtRoute: RobotsDottxtRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ApiAuthSplatRoute: ApiAuthSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
