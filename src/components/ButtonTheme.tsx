@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button'
-import { setTheme } from '@/features/theme/theme.functions'
+import { setTheme } from '@/lib/theme/theme.functions'
 import { useRouteContext, useRouter } from '@tanstack/react-router'
 import { Moon, Sun } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'

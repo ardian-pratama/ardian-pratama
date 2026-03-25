@@ -1,6 +1,7 @@
-import { getTheme } from '@/features/theme/theme.functions';
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router';
-import appCss from '../styles.css?url';
+import { getSession } from '@/lib/auth/auth.functions'
+import { getTheme } from '@/lib/theme/theme.functions'
+import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
+import appCss from '../styles.css?url'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -11,6 +12,10 @@ export const Route = createRootRoute({
       {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1',
+      },
+      {
+        rel: 'icon',
+        href: '/favicon.ico',
       },
       {
         title: 'Ardian Pratama',
@@ -40,7 +45,8 @@ export const Route = createRootRoute({
       },
       {
         property: 'og:image',
-        content: 'https://ardian-pratama.vercel.app/images/ardian-pratama-og.png',
+        content:
+          'https://ardian-pratama.vercel.app/images/ardian-pratama-meta-image.png',
       },
       {
         property: 'og:image:width',
@@ -69,7 +75,8 @@ export const Route = createRootRoute({
       },
       {
         name: 'twitter:image',
-        content: 'https://ardian-pratama.vercel.app/images/ardian-pratama-og.png',
+        content:
+          'https://ardian-pratama.vercel.app/images/ardian-pratama-meta-image.png',
       },
       {
         name: 'twitter:url',
@@ -77,8 +84,8 @@ export const Route = createRootRoute({
       },
       {
         name: 'google-site-verification',
-        content: 'YWn6JzpAG8yxgxmtLJGJQD9LkQfGh882gdmsnfxZqss'
-      }
+        content: 'YWn6JzpAG8yxgxmtLJGJQD9LkQfGh882gdmsnfxZqss',
+      },
     ],
     links: [
       {
@@ -88,25 +95,40 @@ export const Route = createRootRoute({
     ],
   }),
   beforeLoad: async () => {
-    const theme = await getTheme();
+    const theme = await getTheme()
+    const session = await getSession()
 
-    return { theme };
+    return { theme, session }
+  },
+  errorComponent: () => {
+    return (
+      <div className="flex min-h-svh items-center justify-center">
+        <p>Error</p>
+      </div>
+    )
+  },
+  notFoundComponent: () => {
+    return (
+      <div className="flex min-h-svh items-center justify-center">
+        <p>Not Found</p>
+      </div>
+    )
   },
   shellComponent: RootDocument,
-});
+})
 
 function RootDocument({ children }: { children: React.ReactNode }) {
-  const { theme } = Route.useRouteContext();
+  const { theme } = Route.useRouteContext()
 
   return (
     <html
-      lang='id'
+      lang="id"
       className={`${theme} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>
         <meta
-          name='theme-color'
+          name="theme-color"
           content={theme === 'dark' ? '#0a0a0a' : '#ffffff'}
         />
         <HeadContent />
@@ -116,5 +138,5 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Scripts />
       </body>
     </html>
-  );
+  )
 }

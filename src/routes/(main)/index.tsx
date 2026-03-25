@@ -1,10 +1,10 @@
-import { LandscapeStackCard } from '@/components/card/LandscapeStackCard';
-import { PortraitStackCard } from '@/components/card/PortraitStackCard';
-import { StoryCard } from '@/components/card/StoryCard';
-import { Timeline } from '@/components/Timeline';
-import { Button } from '@/components/ui/button';
-import { createFileRoute, Link } from '@tanstack/react-router';
-import { BookOpen } from 'lucide-react';
+import { LandscapeStackCard } from '@/components/card/LandscapeStackCard'
+import { PortraitStackCard } from '@/components/card/PortraitStackCard'
+import { StoryCard } from '@/components/card/StoryCard'
+import { Timeline } from '@/components/Timeline'
+import { Button } from '@/components/ui/button'
+import { createFileRoute, Link } from '@tanstack/react-router'
+import { BookOpen } from 'lucide-react'
 
 const potraitCardData = [
   {
@@ -58,7 +58,7 @@ const potraitCardData = [
       },
     },
   },
-];
+]
 
 const landscapeCardData = [
   {
@@ -110,7 +110,7 @@ const landscapeCardData = [
       },
     },
   },
-];
+]
 
 const journeyData = [
   {
@@ -183,7 +183,7 @@ const journeyData = [
     description:
       'Kini aku memahami bahwa hal besar tidak selalu dicapai melalui pengorbanan. Setiap langkah, jatuh, dan bangun pada akhirnya akan menemukan maknanya.',
   },
-];
+]
 
 const storyData = [
   {
@@ -234,72 +234,72 @@ const storyData = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nesciunt ad voluptatibus! Vero ad id, doloremque quam illum obcaecati placeat maxime saepe asperiores laudantium, debitis.',
   },
-];
+]
 
 export const Route = createFileRoute('/(main)/')({
   component: Home,
-});
+})
 
 function Home() {
   return (
     <>
-      <section className='@container overflow-x-hidden'>
+      <section className="@container overflow-x-hidden">
         <div
-          className='my-8 grid place-content-center content-center gap-8 px-4
+          className="my-8 grid place-content-center content-center gap-8 px-4
         @lg:px-8 @4xl:grid-cols-5 @4xl:px-12 @5xl:px-16
         @7xl:min-h-[calc(100svh-92px)]
-        @7xl:px-32'
+        @7xl:px-32"
         >
           <div
-            className='typography order-2 self-center @4xl:order-1
-          @4xl:col-span-2'
+            className="typography order-2 self-center @4xl:order-1
+          @4xl:col-span-2"
           >
-            <h1 className='@4xl:text-left'>Ruang Cerita dan Dokumentasi Ide</h1>
-            <p className='mt-4'>
+            <h1 className="@4xl:text-left">Ruang Cerita dan Dokumentasi Ide</h1>
+            <p className="mt-4">
               Aku percaya setiap proses punya ceritanya sendiri, menghadirkan
               pelajaran dari setiap langkah, jatuh, dan bangkit, membentuk diri
               perlahan hingga kita mengerti arti perjuangan dan harapan.
             </p>
-            <Link to='/#about'>
-              <Button className='mt-4 px-5'>
+            <Link to="/#about">
+              <Button className="mt-4 px-5">
                 <BookOpen /> Mulai Eksplorasi
               </Button>
             </Link>
           </div>
           <div
-            className='order-1
-          @4xl:order-2 @4xl:col-span-3'
+            className="order-1
+          @4xl:order-2 @4xl:col-span-3"
           >
             <PortraitStackCard data={potraitCardData} />
           </div>
         </div>
       </section>
       <section
-        id='about'
-        className='@container mt-52 grid scroll-m-[76px] overflow-x-hidden'
+        id="about"
+        className="@container mt-52 grid scroll-m-[76px] overflow-x-hidden"
       >
         <div
-          className='my-8 grid place-content-center content-center gap-8 px-4
+          className="my-8 grid place-content-center content-center gap-8 px-4
       @lg:px-8 @4xl:grid-cols-5 @4xl:px-12 @5xl:px-16
       @7xl:min-h-[calc(100svh-92px)]
       @7xl:px-32
-      '
+      "
         >
-          <div className='@4xl:col-span-3'>
-            <div className='my-10  flex items-center justify-center'>
+          <div className="@4xl:col-span-3">
+            <div className="my-10  flex items-center justify-center">
               <LandscapeStackCard data={landscapeCardData} />
             </div>
           </div>
-          <div className='  self-center @4xl:col-span-2'>
+          <div className="  self-center @4xl:col-span-2">
             <h2>Awal Perjalanan</h2>
-            <p className='mt-4'>
+            <p className="mt-4">
               Situs ini lahir dari rasa ingin tahu yang besar. Menjadikannya
               ruang untuk merangkai setiap pengalaman dan momen menjadi sesuatu
               yang bisa dibaca kembali, baik sebagai evaluasi diri maupun
               inspirasi bagi orang lain.
             </p>
-            <Link to='/#journey'>
-              <Button className='mt-4 px-5'>
+            <Link to="/#journey">
+              <Button className="mt-4 px-5">
                 <BookOpen /> Eksplorasi Lebih Jauh
               </Button>
             </Link>
@@ -307,18 +307,18 @@ function Home() {
         </div>
       </section>
       <section
-        id='journey'
-        className='@container mt-52 flex
+        id="journey"
+        className="@container mt-52 flex
       scroll-m-[76px] items-center justify-center overflow-x-hidden
-      @7xl:min-h-[calc(100svh-92px)]'
+      @7xl:min-h-[calc(100svh-92px)]"
       >
         <div
-          className='my-8 flex w-full flex-col gap-8 px-4
-        @lg:px-8 @4xl:px-12 @5xl:px-16 @7xl:px-32'
+          className="my-8 flex w-full flex-col gap-8 px-4
+        @lg:px-8 @4xl:px-12 @5xl:px-16 @7xl:px-32"
         >
-          <div className='text-center'>
+          <div className="text-center">
             <h2>Jejak yang Membentuk Cerita</h2>
-            <p className='mt-4'>
+            <p className="mt-4">
               Sebuah rangkuman singkat dari setiap langkah, jatuh, dan bangun
               yang membawa aku sampai ke titik ini.
             </p>
@@ -327,20 +327,20 @@ function Home() {
         </div>
       </section>
       <section
-        className='@container mt-52 
-      flex items-center justify-center overflow-x-hidden @7xl:min-h-[calc(100svh-92px)]'
+        className="@container mt-52 
+      flex items-center justify-center overflow-x-hidden @7xl:min-h-[calc(100svh-92px)]"
       >
         <div
-          className='my-8 flex w-full flex-col gap-8 px-4
-        @lg:px-8 @4xl:px-12 @5xl:px-16 @7xl:px-32'
+          className="my-8 flex w-full flex-col gap-8 px-4
+        @lg:px-8 @4xl:px-12 @5xl:px-16 @7xl:px-32"
         >
-          <div className='  text-center'>
+          <div className="  text-center">
             <h2>Titik Temu Berbagai Cerita</h2>
-            <p className='mt-4'>
+            <p className="mt-4">
               Menelusuri arti di setiap langkah dari mereka yang pernah singgah.
             </p>
           </div>
-          <div className='grid gap-4 @4xl:grid-cols-5'>
+          <div className="grid gap-4 @4xl:grid-cols-5">
             {storyData.map((data, index) => (
               <StoryCard
                 key={index}
@@ -353,5 +353,5 @@ function Home() {
         </div>
       </section>
     </>
-  );
+  )
 }

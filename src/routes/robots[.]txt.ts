@@ -4,8 +4,7 @@ export const Route = createFileRoute('/robots.txt')({
   server: {
     handlers: {
       GET: async () => {
-        const robots = 
-`User-agent: *
+        const robots = `User-agent: *
          Allow: /
          Sitemap: https://ardian-pratama.vercel.app/sitemap.xml`
 
@@ -18,4 +17,3 @@ export const Route = createFileRoute('/robots.txt')({
     },
   },
 })
-

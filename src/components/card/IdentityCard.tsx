@@ -137,7 +137,7 @@ export function IdentityCard() {
               src="/images/ardian-pratama-potrait.webp"
               className="aspect-[3/4] rounded-lg object-cover"
             />
-            <AvatarFallback className="aspect-[3/4] rounded-lg animate-pulse" />
+            <AvatarFallback className="aspect-[3/4] animate-pulse rounded-lg" />
           </Avatar>
         </div>
       </div>

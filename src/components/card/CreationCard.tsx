@@ -43,7 +43,7 @@ export function CreationCard({
             src={img_url}
             className="aspect-video rounded-md object-cover"
           />
-          <AvatarFallback className="aspect-video rounded-md animate-pulse" />
+          <AvatarFallback className="aspect-video animate-pulse rounded-md" />
         </Avatar>
         <CardHeader>
           <span className="text-muted-foreground mb-2 text-xs">{date}</span>

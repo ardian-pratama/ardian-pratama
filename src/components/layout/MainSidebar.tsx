@@ -1,5 +1,12 @@
 import Brand from '@/assets/icons/brand.svg?react'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
 import {
   Sheet,
   SheetClose,
@@ -10,15 +17,25 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
+import { signOut } from '@/lib/auth-client'
 import { cn } from '@/lib/utils'
-import { Link, linkOptions } from '@tanstack/react-router'
+import {
+  Link,
+  linkOptions,
+  useRouteContext,
+  useRouter,
+} from '@tanstack/react-router'
 import {
   BookOpen,
   BookUser,
+  EllipsisVertical,
   FileBadge,
   FolderGit2,
   House,
+  LayoutDashboard,
+  LogOutIcon,
   Menu,
+  UserIcon,
   UserRoundPlus,
 } from 'lucide-react'
 
@@ -27,35 +44,33 @@ const menuItems = linkOptions([
     to: '/',
     label: 'Beranda',
     icon: <House />,
-    activeOptions: { exact: true },
   },
   {
     to: '/about',
     label: 'Tentang',
     icon: <BookUser />,
-    activeOptions: { exact: true },
   },
   {
     to: '/achievements',
     label: 'Pencapaian',
     icon: <FileBadge />,
-    activeOptions: { exact: true },
   },
   {
     to: '/creations',
     label: 'Hasil Karya',
     icon: <FolderGit2 />,
-    activeOptions: { exact: true },
   },
   {
     to: '/blogs',
     label: 'Blog',
     icon: <BookOpen />,
-    activeOptions: { exact: true },
   },
 ])
 
 export function MainSidebar() {
+  const { session } = useRouteContext({ from: '__root__' })
+  const router = useRouter()
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -70,7 +85,7 @@ export function MainSidebar() {
       <SheetContent
         side="right"
         showCloseButton={false}
-        className="overflow-y-scroll"
+        className="overflow-x-hidden overflow-y-scroll"
       >
         <SheetHeader className="p-2">
           <SheetTitle className="hidden" />
@@ -80,7 +95,7 @@ export function MainSidebar() {
         <span className="mx-4 font-semibold">Menu Utama</span>
         <div className="mx-4 flex flex-col gap-2">
           {menuItems.map((item, index) => (
-            <Link key={index} to={item.to} activeOptions={item.activeOptions}>
+            <Link key={index} to={item.to} activeOptions={{ exact: true }}>
               {({ isActive }) => {
                 return (
                   <SheetClose asChild>
@@ -99,6 +114,63 @@ export function MainSidebar() {
             </Link>
           ))}
         </div>
+        <SheetFooter className={session?.user ? 'p-1' : 'p-2'}>
+          {session?.user ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className="h-auto justify-start gap-2 p-2"
+                >
+                  <Avatar>
+                    <AvatarImage src={session.user.image} />
+                    <AvatarFallback className="animate-pulse" />
+                  </Avatar>
+                  <div className="flex flex-col text-left leading-none">
+                    <span className="max-w-[12rem] truncate text-xs">
+                      {session.user.name}
+                    </span>
+                    <span
+                      className="text-muted-foreground max-w-[12rem]
+                    truncate text-xs font-normal"
+                    >
+                      {session.user.email}
+                    </span>
+                  </div>
+                  <EllipsisVertical className="mr-2 ml-auto" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent sideOffset={4} className="w-fit">
+                <DropdownMenuItem>
+                  <UserIcon />
+                  Profile
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <LayoutDashboard />
+                  Dashboard
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  variant="destructive"
+                  onClick={async () => {
+                    await signOut(session.session.token)
+                    await router.invalidate()
+                  }}
+                >
+                  <LogOutIcon />
+                  Keluar
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <SheetClose asChild>
+              <Link to="/sign-up">
+                <Button className="w-full gap-2">
+                  <UserRoundPlus /> Bergabung
+                </Button>
+              </Link>
+            </SheetClose>
+          )}
+        </SheetFooter>
       </SheetContent>
     </Sheet>
   )

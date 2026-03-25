@@ -25,7 +25,7 @@ interface LandscapeStackCardProps {
   }
 }
 
-export function LandscapeStackCard({data}: LandscapeStackCardProps) {
+export function LandscapeStackCard({ data }: LandscapeStackCardProps) {
   const ref = useRef(null)
   const isInView = useInView(ref, { amount: 0.5 })
 
@@ -60,7 +60,7 @@ function Card({ img_url }: { img_url: string }) {
             src={img_url}
             className="aspect-video rounded-lg object-cover"
           />
-          <AvatarFallback className="aspect-video rounded-lg animate-pulse" />
+          <AvatarFallback className="aspect-video animate-pulse rounded-lg" />
         </Avatar>
       </div>
     </div>

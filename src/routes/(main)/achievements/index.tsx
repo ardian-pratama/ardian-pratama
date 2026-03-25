@@ -14,8 +14,7 @@ import { cn } from '@/lib/utils'
 import { createFileRoute, Link, linkOptions } from '@tanstack/react-router'
 import { FileBadge, Menu, SearchIcon } from 'lucide-react'
 
-const menuItems = linkOptions([
-])
+const menuItems = linkOptions([])
 
 const achievementData = [
   {
