@@ -20,7 +20,11 @@ export const Route = createRootRoute({
       {
         title: 'Ardian Pratama',
         description:
-          'Seorang pembelajar yang meyakini bahwa setiap ide membutuhkan fondasi yang kuat untuk bisa tumbuh dengan baik. Di ruang ini, aku merajut pikiran dan perasaan menjadi satu keselarasan, sebagai cara untuk menghadirkan makna dalam setiap langkah yang kujalani.',
+          'Setiap ide membutuhkan fondasi yang kuat untuk bisa tumbuh dengan baik. Di ruang ini, aku merajut pikiran dan perasaan menjadi satu keselarasan, sebagai cara untuk menghadirkan makna dalam setiap langkah yang kujalani.',
+      },
+      {
+        name: 'author',
+        content: 'Ardian Pratama',
       },
       {
         property: 'og:type',
@@ -33,11 +37,11 @@ export const Route = createRootRoute({
       {
         property: 'og:description',
         content:
-          'Seorang pembelajar yang meyakini bahwa setiap ide membutuhkan fondasi yang kuat untuk bisa tumbuh dengan baik.',
+          'Setiap ide membutuhkan fondasi yang kuat untuk bisa tumbuh dengan baik.',
       },
       {
         property: 'og:url',
-        content: 'https://ardian-pratama.vercel.app',
+        content: 'http://ardian-pratama.my.id',
       },
       {
         property: 'og:site_name',
@@ -46,7 +50,7 @@ export const Route = createRootRoute({
       {
         property: 'og:image',
         content:
-          'https://ardian-pratama.vercel.app/images/ardian-pratama-meta-image.png',
+          'http://ardian-pratama.my.id/images/ardian-pratama-meta-image.png',
       },
       {
         property: 'og:image:width',
@@ -71,20 +75,16 @@ export const Route = createRootRoute({
       {
         name: 'twitter:description',
         content:
-          'Seorang pembelajar yang meyakini bahwa setiap ide membutuhkan fondasi yang kuat untuk bisa tumbuh dengan baik.',
+          'Setiap ide membutuhkan fondasi yang kuat untuk bisa tumbuh dengan baik.',
       },
       {
         name: 'twitter:image',
         content:
-          'https://ardian-pratama.vercel.app/images/ardian-pratama-meta-image.png',
+          'http://ardian-pratama.my.id/images/ardian-pratama-meta-image.png',
       },
       {
         name: 'twitter:url',
-        content: 'https://ardian-pratama.vercel.app',
-      },
-      {
-        name: 'google-site-verification',
-        content: 'YWn6JzpAG8yxgxmtLJGJQD9LkQfGh882gdmsnfxZqss',
+        content: 'http://ardian-pratama.my.id',
       },
     ],
     links: [

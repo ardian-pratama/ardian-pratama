@@ -8,19 +8,19 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
-import { Route as mainRouteRouteImport } from './routes/(main)/route'
 import { Route as authRouteRouteImport } from './routes/(auth)/route'
-import { Route as mainIndexRouteImport } from './routes/(main)/index'
-import { Route as mainCreationsIndexRouteImport } from './routes/(main)/creations/index'
-import { Route as mainBlogsIndexRouteImport } from './routes/(main)/blogs/index'
-import { Route as mainAchievementsIndexRouteImport } from './routes/(main)/achievements/index'
-import { Route as mainAboutIndexRouteImport } from './routes/(main)/about/index'
-import { Route as authSignUpIndexRouteImport } from './routes/(auth)/sign-up/index'
 import { Route as authSignInIndexRouteImport } from './routes/(auth)/sign-in/index'
+import { Route as authSignUpIndexRouteImport } from './routes/(auth)/sign-up/index'
+import { Route as mainAboutIndexRouteImport } from './routes/(main)/about/index'
+import { Route as mainAchievementsIndexRouteImport } from './routes/(main)/achievements/index'
+import { Route as mainBlogsIndexRouteImport } from './routes/(main)/blogs/index'
+import { Route as mainCreationsIndexRouteImport } from './routes/(main)/creations/index'
+import { Route as mainIndexRouteImport } from './routes/(main)/index'
+import { Route as mainRouteRouteImport } from './routes/(main)/route'
+import { Route as rootRouteImport } from './routes/__root'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -303,8 +303,8 @@ export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
 
-import type { getRouter } from './router.tsx'
 import type { createStart } from '@tanstack/react-start'
+import type { getRouter } from './router.tsx'
 declare module '@tanstack/react-start' {
   interface Register {
     ssr: true

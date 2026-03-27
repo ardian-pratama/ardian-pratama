@@ -19,7 +19,7 @@ const config = defineConfig({
     tanstackStart({
       sitemap: {
         enabled: true,
-        host: 'https://ardian-pratama.vercel.app',
+        host: 'https://ardian-pratama.my.id',
       },
     }),
     viteReact({

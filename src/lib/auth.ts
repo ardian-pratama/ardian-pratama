@@ -14,17 +14,12 @@ export const auth = betterAuth({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
       accessType: 'offline',
-      prompt: 'select_account consent',
+      prompt: 'select_account',
     },
   },
   session: {
     expiresIn: 60 * 60 * 24 * 7,
     updateAge: 60 * 60 * 24,
-    cookieCache: {
-      enabled: true,
-      maxAge: 60,
-      strategy: 'compact',
-    },
     deferSessionRefresh: true,
     storeSessionInDatabase: true,
   },

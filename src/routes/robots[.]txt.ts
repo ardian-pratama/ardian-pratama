@@ -6,7 +6,7 @@ export const Route = createFileRoute('/robots.txt')({
       GET: async () => {
         const robots = `User-agent: *
          Allow: /
-         Sitemap: https://ardian-pratama.vercel.app/sitemap.xml`
+         Sitemap: https://ardian-pratama.my.id/sitemap.xml`
 
         return new Response(robots, {
           headers: {

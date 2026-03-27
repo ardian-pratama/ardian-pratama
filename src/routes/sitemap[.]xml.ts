@@ -7,23 +7,23 @@ export const Route = createFileRoute('/sitemap.xml')({
         const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ardian-pratama.vercel.app/</loc>
+    <loc>https://ardian-pratama.my.id/</loc>
     <lastmod>2026-03-25</lastmod>
   </url>
   <url>
-    <loc>https://ardian-pratama.vercel.app/about</loc>
+    <loc>https://ardian-pratama.my.id/about</loc>
     <lastmod>2026-03-25</lastmod>
   </url>
   <url>
-    <loc>https://ardian-pratama.vercel.app/achievements</loc>
+    <loc>https://ardian-pratama.my.id/achievements</loc>
     <lastmod>2026-03-25</lastmod>
   </url>
   <url>
-    <loc>https://ardian-pratama.vercel.app/creations</loc>
+    <loc>https://ardian-pratama.my.id/creations</loc>
     <lastmod>2026-03-25</lastmod>
   </url>
   <url>
-    <loc>https://ardian-pratama.vercel.app/blogs</loc>
+    <loc>https://ardian-pratama.my.id/blogs</loc>
     <lastmod>2026-03-25</lastmod>
   </url>
 </urlset>`
